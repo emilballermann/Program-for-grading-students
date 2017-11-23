@@ -2,15 +2,15 @@
 """
 Created on Thu Nov 23 13:00:40 2017
 
-@author: adams
+@author: Adam
 """
 
 import numpy as np
 from grade_rounding_function import *
 
 #randomly generated matrix
-#grades = np.random.random((6,5))
-#grades = np.round(grades*10)
+grades = np.random.random((5,5))
+grades = np.round(grades*10)
 
 #start of function
 def computeFinalGrades(grades):
@@ -37,4 +37,4 @@ def computeFinalGrades(grades):
     
     return gradesFinal
 
-#print(computeFinalGrades(grades))
+print(computeFinalGrades(grades))

@@ -39,7 +39,7 @@ def roundGrade(grades):
                 gradesRounded[i] = grade1[0]
             
             #afstanden mellem -3 og karakter er større end mellem karakter og 00
-            elif (abs(grades[i]-(-3))) > (abs(grades[i]-(00))):
+            elif (abs(grades[i]-(-3))) >= (abs(grades[i]-(00))):
             
                 #afrund til 00
                 gradesRounded[i] = grade1[1]
@@ -55,7 +55,7 @@ def roundGrade(grades):
                 #afrund til 00
                 gradesRounded[i] = grade2[0]
                 
-            elif (abs(grades[i]-(0))) > (abs(grades[i]-(2))):
+            elif (abs(grades[i]-(0))) >= (abs(grades[i]-(2))):
                 
                 #afrund til 02
                 gradesRounded[i] = grade2[1]
@@ -70,7 +70,7 @@ def roundGrade(grades):
                 #afrund til 2
                 gradesRounded[i] = grade3[0]
                 
-            elif (abs(grades[i]-(2))) > (abs(grades[i]-(4))):
+            elif (abs(grades[i]-(2))) >= (abs(grades[i]-(4))):
                 
                 #afrund til 4
                 gradesRounded[i] = grade3[1]
@@ -85,7 +85,7 @@ def roundGrade(grades):
                 #afrund til 4
                 gradesRounded[i] = grade4[0]
                 
-            elif (abs(grades[i]-(4))) > (abs(grades[i]-(7))):
+            elif (abs(grades[i]-(4))) >= (abs(grades[i]-(7))):
                 
                 #afrund til 7
                 gradesRounded[i] = grade4[1]
@@ -100,7 +100,7 @@ def roundGrade(grades):
                 #afrund til 7
                 gradesRounded[i] = grade5[0]
                 
-            elif (abs(grades[i]-(7))) > (abs(grades[i]-(10))):
+            elif (abs(grades[i]-(7))) >= (abs(grades[i]-(10))):
                 
                 #afrund til 10
                 gradesRounded[i] = grade5[1]
@@ -115,7 +115,7 @@ def roundGrade(grades):
                 #afrund til 10
                 gradesRounded[i] = grade6[0]
                 
-            elif (abs(grades[i]-(10))) > (abs(grades[i]-(12))):
+            elif (abs(grades[i]-(10))) >= (abs(grades[i]-(12))):
                 
                 #afrund til 12
                 gradesRounded[i] = grade6[1]

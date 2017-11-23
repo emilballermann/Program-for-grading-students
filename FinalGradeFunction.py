@@ -2,9 +2,39 @@
 """
 Created on Thu Nov 23 13:00:40 2017
 
-@author: adams
+@author: Adam
 """
 
 import numpy as np
+from grade_rounding_function import *
 
-grades = np.array([00,02,4,7,10,12,12,10,7,7,7,4,02,00,-3,-3,4])
+#randomly generated matrix
+grades = np.random.random((5,5))
+grades = np.round(grades*10)
+
+#start of function
+def computeFinalGrades(grades):
+    
+    #if each student only has one grade it is the final
+    if (len(grades[0,:]) == 1):
+        gradesFinal = roundGrade(grades)
+    
+    #find final grade if more than one grade
+    else:
+        #remove smallest grade
+        grades.sort(axis=1)
+        grades = grades[:,1:len(grades[0,:])]
+        
+        
+        #assign the mean grades to a new array
+        gradesMean = np.zeros(len(grades[:,0]))
+        
+        for i in range(len(gradesMean)):
+            gradesMean[i] = (np.mean(grades[i,:]))
+            
+        #apply rounding grade function to only have valid grades
+        gradesFinal = roundGrade(gradesMean)
+    
+    return gradesFinal
+
+print(computeFinalGrades(grades))

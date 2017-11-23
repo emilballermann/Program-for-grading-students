@@ -24,11 +24,10 @@ def gradesPlot(grades):
     USAGE:
         gradesPlot(grades)
     '''
-
-    
     
         #Plot "Final grades"
     xAxis = [-3,00,2,4,7,10,12]
+    
     #Making to computeFinalGrades(grades) a list to count frequency
     finalGradesToList = list(computeFinalGrades(grades))
     yAxis = [finalGradesToList.count(-3),
@@ -52,6 +51,8 @@ def gradesPlot(grades):
 
     plt.xticks(xAxis,bacStr,rotation=35) #Set lables and rotation
     plt.title("Final grades") #Set title
+    plt.xlabel("Grades") #Assign name to x-axis
+    plt.ylabel("Number of students") #Assign name to y-axis
     
 print(gradesPlot(grades))
     

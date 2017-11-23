@@ -6,7 +6,8 @@ Created on Thu Nov 23 15:14:11 2017
 """
 
 from grade_rounding_function import *
-
+from gradesPlotFunction import *
+from FinalGradeFunction import *
 
 
 while(True):

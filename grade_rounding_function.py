@@ -63,7 +63,7 @@ def roundGrade(grades):
 #-----------------------------------------------------------------------------
     
         #tjekker om karakteren er mellem 02 og 04
-        elif (grades[i] > 2) and (grades[i] < 4):
+        elif (grades[i] >= 2) and (grades[i] < 4):
             
             if (abs(grades[i]-(2))) < (abs(grades[i]-(4))):
                 
@@ -108,7 +108,7 @@ def roundGrade(grades):
 #-----------------------------------------------------------------------------
             
         #elif #tjekker om karakteren er mellem 10 og 12
-        elif (grades[i] >= 10) and (grades[i] < 12):
+        elif (grades[i] >= 10) and (grades[i] <= 12):
             
             if (abs(grades[i]-(10))) < (abs(grades[i]-(12))):
                 

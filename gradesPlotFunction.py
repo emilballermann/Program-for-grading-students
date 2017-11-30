@@ -72,18 +72,22 @@ def gradesPlot(grades):
      #Plot "Grades per assignment"
 
 x = np.array(range(len(grades)))
-xLabel[0] = np.array([""])
+
+xLabels=[""]*len(grades)
 
 for i in range(len(grades)):
-    temp = float("Assingment no. {}".format(i+1))
-    xLabel = np.hstack(xLabel,temp)
-print(xLabel)
+    xLabels[i]="Assignment no. "+" "+str(i+1)
+print(xLabels)
+
+y = [-3,00,2,4,7,10,12]
+yLabels = [-3,00,2,4,7,10,12]
+
+plt.scatter(x,y)
 
 
- 
 plt.xticks(x, xLabel, rotation = 35)
-  
-#plt.xticks(x,np.array["Assignment no. {:f}".format(x)]
+plt.yticks(y,)
+plt.show()
 
 
 print(gradesPlot(grades))

@@ -23,6 +23,11 @@ def computeFinalGrades(grades):
     else:
         #remove smallest grade
         grades.sort(axis=1)
+        
+        for i in range(len(grades[:,0])):
+            if (grades[i,0]==-3):
+                grades[i,:]=-3
+        
         grades = grades[:,1:len(grades[0,:])]
         
         

@@ -5,12 +5,12 @@ Project start: 23rd of November 2017
 
 Project by Adam Beilin, Marcus Garsdal and Emil Ballermann'''
 
+import math
 import matplotlib.pyplot as plt
 import matplotlib as mpl
 import numpy as np
+from FinalGradeFunction import *
 
-grades = np.random.random((10,10))
-grades = np.round(grades*10)
 
 #Defines plot function
 def gradesPlot(grades):
@@ -26,18 +26,50 @@ def gradesPlot(grades):
     USAGE:
         gradesPlot(grades)
     '''
-    x,y = np.count 
+    
+        #Plot "Final grades"
+    xAxis = [-3,00,2,4,7,10,12]
     
     
-        #Plot "Number of bacteria"
-    x,y = np.unique(data[:,2],return_counts=True) #get x and y values
-    x = x.astype(int) #Convert to integers
-    bacStr = np.array(["Salmonella enterica","Bacillus cereus","Listeria",
-             "Brochothrix thermosphacta"]) #x-labes
-    prop_iter = iter(plt.rcParams['axes.prop_cycle']) #Iterate through colors
+    #Making to computeFinalGrades(grades) a list to count frequency
+    finalGradesToList = list(computeFinalGrades(grades))
+    yAxis = [finalGradesToList.count(-3),
+             finalGradesToList.count(00),
+             finalGradesToList.count(2),
+             finalGradesToList.count(4),
+             finalGradesToList.count(7),
+             finalGradesToList.count(10),
+             finalGradesToList.count(12)]
+    
 
+   
+    
+    
+    bacStr = np.array(["-3","00","02","4","7","10","12"]) #x-lables
+    prop_iter = iter(plt.rcParams['axes.prop_cycle']) #Iterate through colors
+   
     plt.figure(1,figsize=(6,6)) #Set first figure with 1:1 ratio
     plt.subplots_adjust(top=0.88, bottom=0.225, left=0.11, right=0.9,
                         hspace=0.2,wspace=0.2) #Adjust size
-    for i in range(0,len(x)):
-        plt.bar(x[i],y[i],color=next(prop_iter)['color']) #Plot bar plot with colors
+
+    for i in range(0,len(xAxis)):
+        plt.bar(xAxis[i],yAxis[i],color=next(prop_iter)['color']) #Plot bar plot with colors
+        
+    
+    plt.xticks(xAxis,bacStr,rotation=35) #Set lables and rotation
+    plt.title("Final grades") #Set title
+    plt.xlabel("Grades") #Assign name to x-axis
+    plt.ylabel("Number of students") #Assign name to y-axis
+    
+    ax2.xAxis.set_ticks(xAxis) #set the ticks to be a
+    ax2.xAxis.set_ticklabels()
+    
+    #Making the y-axis only integers
+    locs, labels = plt.yticks()
+    for each in locs:
+        yAxis.append(int(each))
+    plt.yticks(yAxis)
+
+
+print(gradesPlot(grades))
+    

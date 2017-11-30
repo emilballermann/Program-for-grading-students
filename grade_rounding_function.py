@@ -70,7 +70,7 @@ def roundGrade(grades):
                 #afrund til 2
                 gradesRounded[i] = grade3[0]
                 
-            elif (abs(grades[i]-(2))) > (abs(grades[i]-(4))):
+            elif (abs(grades[i]-(2))) >= (abs(grades[i]-(4))):
                 
                 #afrund til 4
                 gradesRounded[i] = grade3[1]

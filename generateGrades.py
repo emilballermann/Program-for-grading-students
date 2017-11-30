@@ -9,7 +9,7 @@ Created on Thu Nov 30 12:59:53 2017
 
 from grade_rounding_function import *
 import numpy as np
-import random
+from random import randint
 
 #-----------------------------------------------------------------------------
 
@@ -61,4 +61,5 @@ studentGrades = np.hstack((student_numbers, A_new))
 
 #-----------------------------------------------------------------------------
 
-#np.savetxt("studentGrades.csv", A_new, fmt='%s', delimiter=",")
+#save the studentGrades as a .csv file
+np.savetxt("studentGrades.csv", A_new, fmt='%s', delimiter=",")

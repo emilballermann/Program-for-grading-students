@@ -32,7 +32,9 @@ while(True):
 
             else:
                 try:
-                    allGrades = pd.read_csv(file)
+                    studentGrades = pd.read_csv("studentGrades.csv",header=None)
+                    studentGrades = np.array(studentGrades)
+                    
                     fileload = True
                     break
                 

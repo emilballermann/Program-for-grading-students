@@ -66,11 +66,12 @@ def gradesPlot(grades):
     plt.yticks(yAxis)
 
     plt.show()
-    #Print "final grades"
+    
 "====================================="
 
      #Plot "Grades per assignment"
 
+<<<<<<< HEAD
 x = np.array(range(len(grades)))
 
 xLabels=[""]*len(grades)
@@ -88,6 +89,13 @@ plt.scatter(x,y)
 plt.xticks(x, xLabel, rotation = 35)
 plt.yticks(y,)
 plt.show()
+=======
+    x = np.array(range(len(grades)))
+    
+    y = 
+    
+    plt.xticks(x,np.array["Assignment no. {}".format]
+>>>>>>> 7be1794666e43ee9942ce1cf70ebfe0d48cbd1dd
 
 
 print(gradesPlot(grades))

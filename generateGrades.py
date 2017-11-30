@@ -12,18 +12,11 @@ import numpy as np
 from random import randint
 
 #-----------------------------------------------------------------------------
-#Here you can input the number of students and assignments you want to test for
-#You can chose to use random numbers where you pick the lower and higher boundaries
 
 #random rows (number of students)
-#x = randint(1, 10)
-x = 25
-
-#random colums (number of assignments)
-#y = randint(1, 5)
-y = 8
-
-#-----------------------------------------------------------------------------
+x = randint(1, 10)
+#random colums (number of grades)
+y = randint(1, 5)
 
 #random student names
 student_names = np.array(["Ben","Mikkel","Thomas","Mads","Jesper","Emil","Adam","Marcus"])
@@ -34,15 +27,6 @@ A = np.random.uniform(low=-3, high=12, size=(x,y))
 #we round our random integers to grades using our grade_rounding_function
 for i in range(np.size(A,axis=0)):
     A[i,:] = roundGrade(A[i,:])
-    
-#we create a vector with the number of assignments
-assignments=[""]*y
-
-for i in range (y):
-    assignments[i]="Assignment"+" "+str(i+1)
-
-#Labels for the data in our matrix
-labels = ["Student ID"]+["Name"]+assignments
 
 #-----------------------------------------------------------------------------
 
@@ -75,10 +59,7 @@ A_new = np.hstack((students, A))
 #we add our student numbers to the left side of our student names / grades
 studentGrades = np.hstack((student_numbers, A_new))
 
-#we add our labels (Name, student ID, assignment)
-studentGrades = np.vstack((labels, studentGrades))
 #-----------------------------------------------------------------------------
 
 #save the studentGrades as a .csv file
-
 np.savetxt("studentGrades.csv", studentGrades, fmt='%s', delimiter=",")

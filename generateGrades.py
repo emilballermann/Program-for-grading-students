@@ -27,6 +27,15 @@ A = np.random.uniform(low=-3, high=12, size=(x,y))
 #we round our random integers to grades using our grade_rounding_function
 for i in range(np.size(A,axis=0)):
     A[i,:] = roundGrade(A[i,:])
+    
+#we create a vector with the number of assignments
+assignments=[""]*y
+
+for i in range (y):
+    assignments[i]="Assignment"+" "+str(i+1)
+
+#Labels for the data in our matrix
+labels = ["Student ID"]+["Name"]+assignments
 
 #-----------------------------------------------------------------------------
 
@@ -59,7 +68,10 @@ A_new = np.hstack((students, A))
 #we add our student numbers to the left side of our student names / grades
 studentGrades = np.hstack((student_numbers, A_new))
 
+#we add our labels (Name, student ID, assignment)
+studentGrades = np.vstack((labels, studentGrades))
 #-----------------------------------------------------------------------------
 
 #save the studentGrades as a .csv file
-np.savetxt("studentGrades.csv", studentGrades, fmt='%s', delimiter=",")
+
+#np.savetxt("studentGrades.csv", studentGrades, fmt='%s', delimiter=",")

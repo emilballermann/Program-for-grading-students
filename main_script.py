@@ -4,47 +4,77 @@ Created on Thu Nov 23 15:14:11 2017
 
 @author: Garsdal
 """
-
+import pandas as pd
 from grade_rounding_function import *
-from gradesPlotFunction import *
+#from gradesPlotFunction import *
 from FinalGradeFunction import *
 
+#initial values
+fileload = False
 
+print("Welcome to our grading calculator\n")
+
+#start manu
 while(True):
     
-    print("Welcome to our grading calculator\n")
-    print("Input the name of your .csv file to start the program")
-    print("Type 'quit' if you wish to quit")
+    #main menu
+    print("1. Load new data\n2. Check for data errrors\n3. Generate plots\n4. Display list of errors\n5. quit\n6. shits and giggles")
+    option = input("Input: \n").lower()
     
-    while(True):
-    
-    option = input("Input: \n")
-    
-        if (option == "hej"):
-            print("lol")
-            
-        elif (option == 'quit') or (option == 'q'):
-            break    
+    #load function
+    if (option == "1" or option == "load new data"):
         
-        print("sup")
-        print("1. test1\n2. test2\n3. test3\n3. test3\n4. test4\n5. quit")
+        while(True):
+            file = input("Input the name of your .csv file to start the program")
             
-        choice = input("What would you like to see?\n")
-            
-        if (choice == "1"):
+            if (file == 'quit') or (file == 'q'):
+                break   
+
+            else:
+                try:
+                    allGrades = pd.read_csv(file)
+                    fileload = True
+                    break
+                
+                except (FileNotFoundError):
+                    print("\nFile not found")
+                    pass
+                except (ValueError):
+                    print("\nFile has to be .csv format")
+                    pass
+                except (PermissionError):
+                    print("\nFile not found")
+                    pass
+        
+    
+    
+    #show data errors
+    elif (option == "2"):
+        if (fileload == False):
+            print("\nYou need to load file first\n")
+        else:
             print("bruh")
             
-        elif (choice == "2"):
+            
+    #generate plots    
+    elif (option == "3"):
+        if (fileload == False):
+            print("\nYou need to load file first\n")
+        else:
             print("bruh")
             
-        elif (choice == "3"):
+    
+    #display grades    
+    elif (option == "4"):
+        if (fileload == False):
+            print("\nYou need to load file first\n")
+        else:
             print("bruh")
             
-        elif (choice == "4"):
-            print("bruh")
-            
-        elif (choice == "5") or (choice =="quit") or (choice =="q"):
-            break
+    
+    #quit    
+    elif (option == "5") or (option =="quit") or (option =="q"):
+        break
             
     
     

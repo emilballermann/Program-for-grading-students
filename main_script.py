@@ -62,7 +62,7 @@ while(True):
         if (fileload == False):
             print("\nYou need to load file first\n")
         else:
-            print("bruh")
+            print("swag")
             
             
     #generate plots    

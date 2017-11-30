@@ -18,21 +18,21 @@ print("Welcome to our grading calculator\n")
 while(True):
     
     #main menu
-    print("1. Load new data\n2. Check for data errrors\n3. Generate plots\n4. Display list of errors\n5. quit\n6. shits and giggles")
-    option = input("Input: \n").lower()
+    print("1. Load new data\n2. Check for data errrors\n3. Generate plots\n4. Display list of grades\n5. quit\n6. shits and giggles")
+    option = input("Input: ").lower()
     
     #load function
     if (option == "1" or option == "load new data"):
         
         while(True):
-            file = input("Input the name of your .csv file to start the program")
+            file = input("Input the name of your .csv file to start the program: ")
             
             if (file == 'quit') or (file == 'q'):
                 break   
 
             else:
                 try:
-                    studentGrades = pd.read_csv("studentGrades.csv",header=None)
+                    studentGrades = pd.read_csv(file,header=None)
                     studentGrades = np.array(studentGrades)
                     
                     fileload = True
@@ -47,6 +47,13 @@ while(True):
                 except (PermissionError):
                     print("\nFile not found")
                     pass
+                except (OSError):
+                    print("\nFile not found")
+                    pass
+                
+                    
+                #for i in range(len(studentGrades[0,:])):
+                #    print(np.where(studentGrades.count(studentGrades[i,:])))
         
     
     
@@ -71,13 +78,17 @@ while(True):
         if (fileload == False):
             print("\nYou need to load file first\n")
         else:
-            print("bruh")
+            print(studentGrades)
             
     
     #quit    
     elif (option == "5") or (option =="quit") or (option =="q"):
         break
-            
+    
+    
+    
+    else:
+        print("\nPlease choose one of the listed options\n")
     
     
     

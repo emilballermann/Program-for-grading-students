@@ -28,7 +28,7 @@ def gradesPlot(grades):
     '''
     
         #Plot "Final grades"
-    xAxis = [-3,00,2,4,7,10,12]
+    xAxis = [1,2,3,4,5,6,7]
     
     
     #Making to computeFinalGrades(grades) a list to count frequency
@@ -41,10 +41,6 @@ def gradesPlot(grades):
              finalGradesToList.count(10),
              finalGradesToList.count(12)]
     
-
-   
-    
-    
     bacStr = np.array(["-3","00","02","4","7","10","12"]) #x-lables
     prop_iter = iter(plt.rcParams['axes.prop_cycle']) #Iterate through colors
    
@@ -53,16 +49,15 @@ def gradesPlot(grades):
                         hspace=0.2,wspace=0.2) #Adjust size
 
     for i in range(0,len(xAxis)):
-        plt.bar(xAxis[i],yAxis[i],color=next(prop_iter)['color']) #Plot bar plot with colors
+        plt.bar(xAxis[i],yAxis[i],color=next(prop_iter)['color'], alpha=1) #Plot bar plot with colors
         
     
-    plt.xticks(xAxis,bacStr,rotation=35) #Set lables and rotation
+    plt.xticks(xAxis,bacStr, rotation = 35) #Set lables and rotation xAxis,bacStr,rotation=35
     plt.title("Final grades") #Set title
     plt.xlabel("Grades") #Assign name to x-axis
     plt.ylabel("Number of students") #Assign name to y-axis
     
-    ax2.xAxis.set_ticks(xAxis) #set the ticks to be a
-    ax2.xAxis.set_ticklabels()
+  
     
     #Making the y-axis only integers
     locs, labels = plt.yticks()
@@ -70,6 +65,27 @@ def gradesPlot(grades):
         yAxis.append(int(each))
     plt.yticks(yAxis)
 
+    plt.show()
+    
+"====================================="
+
+     #Plot "Grades per assignment"
+
+    x = np.array(range(len(grades)))
+    
+    y = 
+    
+    plt.xticks(x,np.array["Assignment no. {}".format]
+
 
 print(gradesPlot(grades))
     
+'''“Grades per assignment”: A plot with the assignments on the x-axis and the grades on the y-axis. The x-axis must
+ show all assignments from 1 to M, and the y-axis must show all grade −3 to 12. The plot must contain: 
+     1. Each of the given grades marked by a dot. You must add a small random number (between -0.1 and 0.1) to the x- and
+ y-coordinates of each dot, to be able tell apart the diﬀerent dots which otherwise would be on top of each other 
+ when more than one student has received the same grade in the same assignment. 
+     2. The average grade of each of 
+ the assignments plotted as a line
+The plots should include a suitable title, descriptive axis labels, and a data legend where appropriate. You are
+ allowed to present the plots in separate ﬁgure windows or as sub-plots in a single ﬁgure window.'''

@@ -12,11 +12,18 @@ import numpy as np
 from random import randint
 
 #-----------------------------------------------------------------------------
+#Here you can input the number of students and assignments you want to test for
+#You can chose to use random numbers where you pick the lower and higher boundaries
 
 #random rows (number of students)
-x = randint(1, 10)
-#random colums (number of grades)
-y = randint(1, 5)
+#x = randint(1, 10)
+x = 25
+
+#random colums (number of assignments)
+#y = randint(1, 5)
+y = 8
+
+#-----------------------------------------------------------------------------
 
 #random student names
 student_names = np.array(["Ben","Mikkel","Thomas","Mads","Jesper","Emil","Adam","Marcus"])
@@ -74,4 +81,4 @@ studentGrades = np.vstack((labels, studentGrades))
 
 #save the studentGrades as a .csv file
 
-#np.savetxt("studentGrades.csv", studentGrades, fmt='%s', delimiter=",")
+np.savetxt("studentGrades.csv", studentGrades, fmt='%s', delimiter=",")

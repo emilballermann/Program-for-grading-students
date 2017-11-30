@@ -62,4 +62,4 @@ studentGrades = np.hstack((student_numbers, A_new))
 #-----------------------------------------------------------------------------
 
 #save the studentGrades as a .csv file
-np.savetxt("studentGrades.csv", A_new, fmt='%s', delimiter=",")
+np.savetxt("studentGrades.csv", studentGrades, fmt='%s', delimiter=",")

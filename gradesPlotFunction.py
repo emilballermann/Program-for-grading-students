@@ -6,7 +6,7 @@ Project start: 23rd of November 2017
 Project by Adam Beilin, Marcus Garsdal and Emil Ballermann'''
 
 import math
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt 
 import matplotlib as mpl
 import numpy as np
 from FinalGradeFunction import *
@@ -71,7 +71,7 @@ def gradesPlot(grades):
 
      #Plot "Grades per assignment"
 
-<<<<<<< HEAD
+
 x = np.array(range(len(grades)))
 
 xLabels=[""]*len(grades)
@@ -83,19 +83,12 @@ print(xLabels)
 y = [-3,00,2,4,7,10,12]
 yLabels = [-3,00,2,4,7,10,12]
 
-plt.scatter(x,y)
+plt.plot(x,y)
 
 
 plt.xticks(x, xLabel, rotation = 35)
 plt.yticks(y,)
 plt.show()
-=======
-    x = np.array(range(len(grades)))
-    
-    y = 
-    
-    plt.xticks(x,np.array["Assignment no. {}".format]
->>>>>>> 7be1794666e43ee9942ce1cf70ebfe0d48cbd1dd
 
 
 print(gradesPlot(grades))

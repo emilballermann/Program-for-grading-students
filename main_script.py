@@ -2,7 +2,7 @@
 """
 Created on Thu Nov 23 15:14:11 2017
 
-@author: Garsdal
+@author: Garsdal and Emiiiiiil, and Adam Beilin
 """
 import pandas as pd
 from grade_rounding_function import *

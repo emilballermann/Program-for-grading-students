@@ -61,7 +61,7 @@ def gradesPlot(grades):
     
     '''
 ===============Plot "Grades per assignment"==================
-    '''
+     '''
                
     #Save the number of students and assignments as variables
     N = matrixShape(grades)[0]

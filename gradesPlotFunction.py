@@ -71,7 +71,7 @@ def gradesPlot(grades):
 
      #Plot "Grades per assignment"
 
-
+#Defining length of datamatrix
 x = np.array(range(len(grades)))
 
 xLabels=[""]*len(grades)

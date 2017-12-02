@@ -81,4 +81,5 @@ studentGrades = np.vstack((labels, studentGrades))
 
 #save the studentGrades as a .csv file
 
+#print(np.mean(A))
 np.savetxt("studentGrades.csv", studentGrades, fmt='%s', delimiter=",")

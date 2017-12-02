@@ -37,4 +37,4 @@ def computeFinalGrades(grades):
     
     return gradesFinal
 
-print(computeFinalGrades(grades))
+#print(computeFinalGrades(grades))

@@ -24,7 +24,45 @@ while(True):
     else:
         try:
             studentGrades = pd.read_csv(file,header=None)
+            
+            
+            findDubs = studentGrades.duplicated(subset=0)
+            findDubs = np.array(findDubs)
+            
+            index = np.where(findDubs==True)
+            index = index[0]
+            
+            noDubs = len(index)
+            
+            dubs = [""]*len(index)
+            rows = [""]*len(index)
+            
+            #convert place holder so we can still operate on studentGrades with panda
+            temp = np.array(studentGrades)
+            
+            for i in range (noDubs):
+                dubs[i] = temp[index[i],0]
+                rows[i] = index[i]
+            
+            if len(dubs) >0:
+                print("\nThere were",noDubs,"duplicates found in the student IDs, they were:")
+                for i in range(noDubs):
+                    print(dubs[i],"from row",rows[i])
+                    
+                    
+            #removes duplicates in studentnumber, but does not say where!!
+            
+            studentGrades = studentGrades.drop_duplicates(subset = 0)
+            
             studentGrades = np.array(studentGrades)
+            
+            noAss = (len(studentGrades[0,:]) -2)
+            noStu = (len(studentGrades[:,0]) -1)
+            
+            
+            print("\nThere are a total of" , noStu , "valid students each with a total of" , noAss , "assignments\n")
+            
+            
             
             fileload = True
             break
@@ -52,26 +90,19 @@ if (fileload == True):
     
     while(True):
         #main menu
-        print("\n1. Check for data errrors\n2. Generate plots\n3. Display list of grades\n4. quit\n5. shits and giggles")
+        print("\n1. Check for data errrors\n2. Generate plots\n3. Display list of grades\n4. quit\n")
+        
         option = input("Input: ").lower()
-        
-        
         
         
         #show data errors
         if (option == "1"):
-            if (fileload == False):
-                print("\nYou need to load file first\n")
-            else:
-                print("bruh")
+            print("bruh")
                 
                 
         #generate plots    
         elif (option == "2"):
-            if (fileload == False):
-                print("\nYou need to load file first\n")
-            else:
-                print("bruh")
+            print("bruh")
                 
         
         #display grades    

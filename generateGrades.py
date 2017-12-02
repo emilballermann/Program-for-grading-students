@@ -17,11 +17,11 @@ from random import randint
 
 #random rows (number of students)
 #x = randint(1, 10)
-x = 25
+x = 8
 
 #random colums (number of assignments)
 #y = randint(1, 5)
-y = 8
+y = 5
 
 #-----------------------------------------------------------------------------
 
@@ -82,4 +82,4 @@ studentGrades = np.vstack((labels, studentGrades))
 #save the studentGrades as a .csv file
 
 #print(np.mean(A))
-np.savetxt("studentGrades.csv", studentGrades, fmt='%s', delimiter=",")
+np.savetxt("studentGrades½.csv", studentGrades, fmt='%s', delimiter=",")

@@ -9,7 +9,7 @@ import math
 import matplotlib.pyplot as plt 
 import matplotlib as mpl
 import numpy as np
-from FinalGradeFunction import *
+from finalGradeFunction import *
 a=[4,7,12,10,10,00,2]
 b=[12,10,7,4,4,2,2,]
 c=[00,-3,00,-3,-3,4,4]
@@ -21,7 +21,6 @@ data=np.copy(grades)
 def gradesPlot(grades):
     '''
 =============Plot "Final grades"===============
-
     '''        
     xAxis = [1,2,3,4,5,6,7]
     

@@ -4,15 +4,25 @@ Created on Thu Nov 23 15:14:11 2017
 
 @author: Garsdal and Emiiiiiil, and Adam Beilin
 """
+
+#initial imports
+#----------------------------------------------------------------------------
+
 import pandas as pd
-from grade_rounding_function import *
+from gradeRoundingFunction import *
 #from gradesPlotFunction import *
-from FinalGradeFunction import *
+from finalGradeFunction import *
+
+#----------------------------------------------------------------------------
 
 #initial values
 fileload = False
 
-print("Welcome to our grading calculator\n")
+#----------------------------------------------------------------------------
+
+print("Welcome to our grading calculator")
+
+#----------------------------------------------------------------------------
 
 #start manu
 while(True):
@@ -60,7 +70,7 @@ while(True):
             noStu = (len(studentGrades[:,0]) -1)
             
             
-            print("\nThere are a total of" , noStu , "valid students each with a total of" , noAss , "assignments\n")
+            print("\nThere are a total of" , noStu , "valid students each with a total of" , noAss , "assignments")
             
             
             
@@ -80,17 +90,16 @@ while(True):
             print("\nFile not found")
             pass
              
-                          
+                         
                 #for i in range(len(studentGrades[0,:])):
                 #    print(np.where(studentGrades.count(studentGrades[i,:])))
-      
 
 if (fileload == True):
 
     
     while(True):
         #main menu
-        print("\n1. Check for data errrors\n2. Generate plots\n3. Display list of grades\n4. quit\n")
+        print("\n1. Check for data errors\n2. Generate plots\n3. Display list of grades\n4. Quit")
         
         option = input("Input: ").lower()
         
@@ -117,7 +126,7 @@ if (fileload == True):
         
         
         else:
-            print("\nPlease choose one of the listed options\n")
+            print("\nPlease choose one of the listed options")
         
         
         

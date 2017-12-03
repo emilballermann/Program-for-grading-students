@@ -9,7 +9,7 @@ import math
 import matplotlib.pyplot as plt 
 import matplotlib as mpl
 import numpy as np
-from finalGradeFunction import *
+from FinalGradeFunction import *
 a=[4,7,12,10,10,00,2]
 b=[12,10,7,4,4,2,2,]
 c=[00,-3,00,-3,-3,4,4]
@@ -63,8 +63,8 @@ def gradesPlot(grades):
      '''
                
     #Save the number of students and assignments as variables
-    N = matrixShape(grades)[0]
-    M = matrixShape(grades)[1]
+    N = grades.shape[0]
+    M = grades.shape[1]
     y = [-3,00,2,4,7,10,12]
     #Making a matrix with random numbers for dot-position
     x=np.random.uniform(-0.1,0.1,M*N).reshape(N,M)

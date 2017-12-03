@@ -5,9 +5,7 @@ Project start: 23rd of November 2017
 
 Project by Adam Beilin, Marcus Garsdal and Emil Ballermann'''
 
-import math
 import matplotlib.pyplot as plt 
-import matplotlib as mpl
 import numpy as np
 from FinalGradeFunction import *
 a=[4,7,12,10,10,00,2]

@@ -10,21 +10,22 @@ Created on Thu Nov 23 15:14:11 2017
 
 import pandas as pd
 from gradeRoundingFunction import *
-#from gradesPlotFunction import *
+from gradesPlotFunction import *
 from finalGradeFunction import *
 
+#initial values
 #----------------------------------------------------------------------------
 
-#initial values
 fileload = False
 
+#Introduction to the program
 #----------------------------------------------------------------------------
 
-print("Welcome to our grading calculator")
+print("\nWelcome to our grading calculator")
 
+#Loading a .csv file
 #----------------------------------------------------------------------------
 
-#start manu
 while(True):
 
     file = input("Input the name of your .csv file to start the program: ")
@@ -34,7 +35,9 @@ while(True):
     else:
         try:
             studentGrades = pd.read_csv(file,header=None)
-            
+
+#Error handling for duplicates
+#----------------------------------------------------------------------------            
             
             findDubs = studentGrades.duplicated(subset=0)
             findDubs = np.array(findDubs)
@@ -58,21 +61,28 @@ while(True):
                 print("\nThere were",noDubs,"duplicates found in the student IDs, they were:")
                 for i in range(noDubs):
                     print(dubs[i],"from row",rows[i])
-                    
-                    
+
+#datafile (grades) needed to work with is defined                    
+#----------------------------------------------------------------------------
+      
             #removes duplicates in studentnumber, but does not say where!!
             
             studentGrades = studentGrades.drop_duplicates(subset = 0)
             
             studentGrades = np.array(studentGrades)
             
-            noAss = (len(studentGrades[0,:]) -2)
-            noStu = (len(studentGrades[:,0]) -1)
+            #kode til at fjerne navne/student ID/assignments
+            grades = np.delete((np.delete((np.delete(studentGrades,0,axis=0)),0,axis = 1)),0,axis=1)
+            grades = grades.astype(float)
             
+            
+            noAss = (len(studentGrades[0,:]) -2)
+            noStu = (len(studentGrades[:,0]) -1) 
             
             print("\nThere are a total of" , noStu , "valid students each with a total of" , noAss , "assignments")
-            
-            
+     
+#some error handling
+#----------------------------------------------------------------------------
             
             fileload = True
             break
@@ -90,12 +100,15 @@ while(True):
             print("\nFile not found")
             pass
              
-                         
                 #for i in range(len(studentGrades[0,:])):
                 #    print(np.where(studentGrades.count(studentGrades[i,:])))
 
+#Continue to main script if file is loaded
+#----------------------------------------------------------------------------
+
 if (fileload == True):
 
+#----------------------------------------------------------------------------
     
     while(True):
         #main menu
@@ -103,27 +116,31 @@ if (fileload == True):
         
         option = input("Input: ").lower()
         
-        
+#----------------------------------------------------------------------------
+
         #show data errors
         if (option == "1"):
             print("bruh")
                 
-                
+#----------------------------------------------------------------------------
+
         #generate plots    
         elif (option == "2"):
-            print("bruh")
+            gradesPlot(grades)
                 
-        
+#----------------------------------------------------------------------------
+  
         #display grades    
         elif (option == "3"):
                 print(studentGrades)
                 
-        
+#----------------------------------------------------------------------------
+     
         #quit    
         elif (option == "4") or (option =="quit") or (option =="q"):
             break
         
-        
+#----------------------------------------------------------------------------
         
         else:
             print("\nPlease choose one of the listed options")

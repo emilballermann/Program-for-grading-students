@@ -10,7 +10,7 @@ Project by Adam Beilin, Marcus Garsdal and Emil Ballermann'''
 
 import matplotlib.pyplot as plt 
 import numpy as np
-from finalGradeFunction import *
+from FinalGradeFunction import *
 
 #----------------------------------------------------------------------------
 

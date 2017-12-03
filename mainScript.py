@@ -11,7 +11,7 @@ Created on Thu Nov 23 15:14:11 2017
 import pandas as pd
 from gradeRoundingFunction import *
 from gradesPlotFunction import *
-from finalGradeFunction import *
+from FinalGradeFunction import *
 
 #initial values
 #----------------------------------------------------------------------------

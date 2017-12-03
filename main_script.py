@@ -23,34 +23,37 @@ while(True):
         break   
     else:
         try:
+            #load file with panda
             studentGrades = pd.read_csv(file,header=None)
             
-            
+            #find the place of the dublicates
             findDubs = studentGrades.duplicated(subset=0)
             findDubs = np.array(findDubs)
             
             index = np.where(findDubs==True)
             index = index[0]
             
+            #find amount of dublicates
             noDubs = len(index)
-            
             dubs = [""]*len(index)
-            rows = [""]*len(index)
-            
+
             #convert place holder so we can still operate on studentGrades with panda
             temp = np.array(studentGrades)
             
+            #find the specific duplicates
+            dubs = [""]*len(index)
+            
             for i in range (noDubs):
                 dubs[i] = temp[index[i],0]
-                rows[i] = index[i]
-            
+                
+            #print message of which IDs were duplicates
             if len(dubs) >0:
                 print("\nThere were",noDubs,"duplicates found in the student IDs, they were:")
                 for i in range(noDubs):
-                    print(dubs[i],"from row",rows[i])
+                    print(dubs[i],"from row",index[i])
                     
                     
-            #removes duplicates in studentnumber, but does not say where!!
+            #removes duplicates in studentnumber
             
             studentGrades = studentGrades.drop_duplicates(subset = 0)
             
@@ -61,6 +64,9 @@ while(True):
             
             
             print("\nThere are a total of" , noStu , "valid students each with a total of" , noAss , "assignments\n")
+            
+            
+            #Must also check if grades are not on the 7 point scale
             
             
             
@@ -90,28 +96,32 @@ if (fileload == True):
     
     while(True):
         #main menu
-        print("\n1. Check for data errrors\n2. Generate plots\n3. Display list of grades\n4. quit\n")
+        print("\n1. Load new data \n2. Check for data errrors\n3. Generate plots\n4. Display list of grades\n5. quit\n")
         
         option = input("Input: ").lower()
         
         
-        #show data errors
+        #Load new data
         if (option == "1"):
+            print("bruh")
+        
+        #show data errors
+        if (option == "2"):
             print("bruh")
                 
                 
         #generate plots    
-        elif (option == "2"):
+        elif (option == "3"):
             print("bruh")
                 
         
         #display grades    
-        elif (option == "3"):
+        elif (option == "4"):
                 print(studentGrades)
                 
         
         #quit    
-        elif (option == "4") or (option =="quit") or (option =="q"):
+        elif (option == "5") or (option =="quit") or (option =="q"):
             break
         
         

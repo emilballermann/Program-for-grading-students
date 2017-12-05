@@ -11,7 +11,7 @@ Created on Thu Nov 23 15:14:11 2017
 import pandas as pd
 from gradeRoundingFunction import *
 from gradesPlotFunction import *
-from FinalGradeFunction import *
+from finalGradeFunction import *
 
 #initial values
 #----------------------------------------------------------------------------
@@ -69,7 +69,7 @@ while(True):
                     
                     
             #removes duplicates in studentnumber
-                    print(dubs[i],"from row",rows[i])
+                    #print(dubs[i],"from row",index[i])
 
 #datafile (grades) needed to work with is defined                    
 #----------------------------------------------------------------------------

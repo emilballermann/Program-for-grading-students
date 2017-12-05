@@ -34,10 +34,7 @@ while(True):
         break   
     else:
         try:
-            #load file with panda
             studentGrades = pd.read_csv(file,header=None)
-            
-            #find the place of the dublicates
 
 #Error handling for duplicates
 #----------------------------------------------------------------------------            
@@ -48,28 +45,22 @@ while(True):
             index = np.where(findDubs==True)
             index = index[0]
             
-            #find amount of dublicates
             noDubs = len(index)
+            
             dubs = [""]*len(index)
-
+            rows = [""]*len(index)
+            
             #convert place holder so we can still operate on studentGrades with panda
             temp = np.array(studentGrades)
             
-            #find the specific duplicates
-            dubs = [""]*len(index)
-            
             for i in range (noDubs):
                 dubs[i] = temp[index[i],0]
-                
-            #print message of which IDs were duplicates
+                rows[i] = index[i]
+            
             if len(dubs) >0:
                 print("\nThere were",noDubs,"duplicates found in the student IDs, they were:")
                 for i in range(noDubs):
-                    print(dubs[i],"from row",index[i])
-                    
-                    
-            #removes duplicates in studentnumber
-                    #print(dubs[i],"from row",index[i])
+                    print(dubs[i],"from row",rows[i])
 
 #datafile (grades) needed to work with is defined                    
 #----------------------------------------------------------------------------
@@ -87,9 +78,6 @@ while(True):
             
             noAss = (len(studentGrades[0,:]) -2)
             noStu = (len(studentGrades[:,0]) -1) 
-            
-            #Must also check if grades are not on the 7 point scale
-            
             
             print("\nThere are a total of" , noStu , "valid students each with a total of" , noAss , "assignments")
      
@@ -124,12 +112,6 @@ if (fileload == True):
     
     while(True):
         #main menu
-        print("\n1. Load new data \n2. Check for data errrors\n3. Generate plots\n4. Display list of grades\n5. quit\n")
-        
-        option = input("Input: ").lower()
-        
-        
-        #Load new data
         print("\n1. Check for data errors\n2. Generate plots\n3. Display list of grades\n4. Quit")
         
         option = input("Input: ").lower()
@@ -139,29 +121,23 @@ if (fileload == True):
         #show data errors
         if (option == "1"):
             print("bruh")
-        
-        #show data errors
-        if (option == "2"):
-            print("bruh")
                 
 #----------------------------------------------------------------------------
 
         #generate plots    
-        elif (option == "3"):
-            print("bruh")
         elif (option == "2"):
             gradesPlot(grades)
                 
 #----------------------------------------------------------------------------
   
         #display grades    
-        elif (option == "4"):
+        elif (option == "3"):
                 print(studentGrades)
                 
 #----------------------------------------------------------------------------
      
         #quit    
-        elif (option == "5") or (option =="quit") or (option =="q"):
+        elif (option == "4") or (option =="quit") or (option =="q"):
             break
         
 #----------------------------------------------------------------------------
